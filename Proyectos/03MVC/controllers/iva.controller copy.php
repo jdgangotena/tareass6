@@ -19,9 +19,9 @@ switch ($_GET["op"]) {
         $datos = array();
         $datos = $iva->todos();
         while ($row = mysqli_fetch_assoc($datos)) {
-            $todos[] = $row;
+            $todas[] = $row;
         }
-        echo json_encode($todos);
+        echo json_encode($todas);
         break;
 
 

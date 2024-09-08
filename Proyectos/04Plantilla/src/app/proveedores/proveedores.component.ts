@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SharedModule } from 'src/app/theme/shared/shared.module';
 import { Iproveedor } from '../Interfaces/iproveedor';
 import { ProveedorService } from '../Services/proveedores.service';
+import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -13,8 +14,8 @@ import { RouterLink } from '@angular/router';
 })
 export class ProveedoresComponent {
   title = 'Lista de Proveedores';
-
   listaProveedores: Iproveedor[] = [];
+  
   constructor(private ServicioProveedor: ProveedorService) {}
   ngOnInit() {
     this.cargatabla();

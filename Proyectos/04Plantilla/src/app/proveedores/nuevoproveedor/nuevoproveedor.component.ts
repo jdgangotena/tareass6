@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Iproveedor } from 'src/app/Interfaces/iproveedor';
 import { ProveedorService } from 'src/app/Services/proveedores.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-nuevoproveedor',
@@ -61,7 +62,8 @@ export class NuevoproveedorComponent implements OnInit {
       this.provedorServicio.insertar(iproveedor).subscribe((respuesta) => {
         // parseInt(respuesta) > 1 ? alert('Grabado con exito') : alert('Error al grabar');
         if (parseInt(respuesta) > 1) {
-          alert('Grabado con exito');
+          //alert('Grabado con exito');
+          Swal.fire('Exito', 'Proveedor se grabo con exito', 'success');
           this.navegacion.navigate(['/proveedores']);
         } else {
           alert('Error al grabar');
@@ -72,7 +74,8 @@ export class NuevoproveedorComponent implements OnInit {
       this.provedorServicio.actualizar(iproveedor).subscribe((respuesta) => {
         if (parseInt(respuesta) > 0) {
           this.idProveedores = 0;
-          alert('Actualizado con exito');
+          //alert('Actualizado con exito');
+          Swal.fire('Exito', 'El proveedor se modifico con exito', 'success');
           this.navegacion.navigate(['/proveedores']);
         } else {
           alert('Error al actualizar');

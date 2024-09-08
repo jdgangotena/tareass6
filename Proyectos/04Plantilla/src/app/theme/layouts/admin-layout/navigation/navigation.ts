@@ -71,12 +71,12 @@ export const NavigationItems: NavigationItem[] = [
     icon: 'icon-navigation',
     children: [
       {
-        id: 'proveedores',
+        id: 'tabler',
         title: 'Proveedores',
         type: 'item',
         classes: 'nav-item',
         url: '/proveedores',
-        icon: ''
+        icon: 'bg-colors'
       },
       {
         id: 'color',
